@@ -13,6 +13,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -23,6 +24,40 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-family: 'Source Sans Pro', sans-serif;
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        background: #666666;
+        box-sizing: border-box;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        padding: 12px;
+        width: 100%;
+      }
+
+      #root {
+        border: 1px solid #CCCCCC;
+        border-radius: 4px;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
