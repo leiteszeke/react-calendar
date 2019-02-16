@@ -1,18 +1,9 @@
-// Dependencies
-import moment from 'moment';
-import { normalize } from 'normalizr';
 // Reducers
 import reducer from '../../reducers/event';
 // Actions
 import {
-    CLEAR_VALUES,
     FETCH_EVENTS,
-    CREATE_EVENT,
-    UPDATE_EVENT,
-    DELETE_EVENT,
 } from '../../actions';
-// Schemas
-import { eventsSchema } from '../../schemas/event';
 
 describe('event reducer', () => {
     it('should return the initial state', () => {

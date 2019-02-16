@@ -39,15 +39,15 @@ const Calendar = (props) => {
 
                             return (
                                 <Day
-                                    classes={ classnames({
+                                    classes={ classnames({
                                         disabled,
                                     }) }
                                     data-day={ day.format('D') }
-                                    key={ `${ week }_${ day.format('D') }` }
+                                    key={ `${ week }_${ day.format('D') }` }
                                     onClick={ () => handleDayClick(day) }
                                 >
                                     <Number
-                                        classes={ classnames({
+                                        classes={ classnames({
                                             active: today === day.format('D'),
                                         }) }
                                     >

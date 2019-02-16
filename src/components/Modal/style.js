@@ -14,7 +14,7 @@ export const Overlay = styled.div`
 `;
 
 export const Container = styled.div`
-    background: ${ props => props.color || '#FFFFFF' };
+    background: ${ props => props.color || '#FFFFFF' };
     border-radius: 4px;
     height: 30%;
     min-height: 260px;

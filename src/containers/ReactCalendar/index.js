@@ -105,7 +105,7 @@ class ReactCalendar extends Component {
       return [];
     }
 
-    Object.entries(events).map(([key, value]) => {
+    Object.entries(events).map(([, value]) => {
       const eventDate = moment(value.date).format('YYYY-MM-DD');
 
       if (eventDate === currentDate) {
@@ -122,7 +122,7 @@ class ReactCalendar extends Component {
     return result;
   }
 
-  generateCalendar(currentMonth, events) {
+  generateCalendar(currentMonth) {
     const startWeek = moment().startOf('month').week();
     const endWeek = moment().endOf('month').week();
     const calendar = [];
@@ -182,7 +182,7 @@ class ReactCalendar extends Component {
   }
 
   closeModal() {
-    this.setState({ showModal: false, event: defaultEvent });
+    this.setState({ showModal: false, event: defaultEvent });
   }
 
   render() {
@@ -223,7 +223,7 @@ class ReactCalendar extends Component {
           <Datepicker name="date" value={ event.date } onChange={ this.setValue } />
           <Timepicker name="time" value={ event.time } onChange={ this.setValue } />
         </DateTime>
-        <ColorList name="color" selected={ event.color } onClick={ this.setValue } />
+        <ColorList name="color" selected={ event.color } onClick={ this.setValue } />
       </EventModal>
     ;
 
@@ -231,7 +231,7 @@ class ReactCalendar extends Component {
       <React.Fragment>
         <Header month={ currentMonth } year={ currentYear } />
         <Calendar
-          month={ calendar }
+          month={ calendar }
           onDayClick={ (date) => this.setState({ showModal: true, event: { ...event, ...{ date } } } ) }
           onEventClick={ this.openEditModal }
         />
@@ -239,7 +239,7 @@ class ReactCalendar extends Component {
           color={ event.color }
           show={ showModal }
           title={ typeof event.id !== 'undefined' ? "Editar Evento" : "Agregar Evento" }
-          content={ eventModal }
+          content={ eventModal }
           buttons={ footerButtons }
         />
       </React.Fragment>

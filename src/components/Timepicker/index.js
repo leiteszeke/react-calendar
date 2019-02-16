@@ -1,7 +1,7 @@
 // Dependencies
 import React from 'react';
 // Styled
-import { Element } from './style';
+import { Element } from './style';
 
 const Timepicker = (props) => {
     const {

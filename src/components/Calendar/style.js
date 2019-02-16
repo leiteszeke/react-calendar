@@ -18,7 +18,7 @@ export const Week = styled.div`
   display: flex;
   width: 100%;
 
-  ${ Container }.weeks_5 & {
+  ${ Container }.weeks_5 & {
     height: 20%;
   }
 
@@ -31,7 +31,7 @@ export const Week = styled.div`
     height: auto;
     width: 100%;
 
-    ${ Container }.weeks_5 & {
+    ${ Container }.weeks_5 & {
       height: auto;
     }
   }
