@@ -23,6 +23,10 @@ export const Days = styled.div`
     display: flex;
     justify-content: flex-end;
     width: 100%;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
 `;
 
 export const Day = styled.div`

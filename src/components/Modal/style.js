@@ -17,7 +17,16 @@ export const Container = styled.div`
     background: ${ props => props.color || '#FFFFFF' };
     border-radius: 4px;
     height: 30%;
+    min-height: 260px;
     width: 40%;
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        width: 50%;
+    }
+
+    @media (max-width: 767px) {
+        width: 90%;
+    }
 `;
 
 export const Header = styled.div`

@@ -11,18 +11,25 @@ const Calendar = (props) => {
     const {
         month,
         onDayClick,
+        onEventClick,
     } = props;
 
     const today = moment().format('D');
 
-    const handleClick = (date) => {
+    const handleDayClick = (date) => {
         if (typeof onDayClick === 'function') {
             onDayClick(date);
         }
     }
 
+    const handleEventClick = (event) => {
+        if (typeof onEventClick === 'function') {
+            onEventClick(event);
+        }
+    }
+
     return (
-        <Container weeks={ month.length }>
+        <Container weeks={ month.length } id="container">
             { month.map(item => {
                 const { week, days } = item;
                 return (
@@ -35,8 +42,9 @@ const Calendar = (props) => {
                                     classes={ classnames({
                                         disabled,
                                     }) }
+                                    data-day={ day.format('D') }
                                     key={ `${ week }_${ day.format('D') }` }
-                                    onClick={ () => handleClick(day) }
+                                    onClick={ () => handleDayClick(day) }
                                 >
                                     <Number
                                         classes={ classnames({
@@ -47,7 +55,11 @@ const Calendar = (props) => {
                                     </Number>
                                     <EventList>
                                         { events.map(item =>
-                                            <Event key={ item } { ...item } />
+                                            <Event
+                                                key={ item.id }
+                                                onClick={ handleEventClick }
+                                                { ...item }
+                                            />
                                         ) }
                                     </EventList>
                                 </Day>

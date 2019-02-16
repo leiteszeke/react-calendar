@@ -8,6 +8,10 @@ export const Container = styled.div.attrs(props => ({
   flex-wrap: wrap;
   height: calc(100% - 80px);
   width: 100%;
+
+  @media (max-width: 767px) {
+    overflow: auto;
+  }
 `;
 
 export const Week = styled.div`
@@ -20,6 +24,16 @@ export const Week = styled.div`
 
   &:last-child {
     border-bottom: none;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+
+    ${ Container }.weeks_5 & {
+      height: auto;
+    }
   }
 `;
 
@@ -34,7 +48,7 @@ export const Day = styled.div.attrs(props => ({
   flex-wrap: wrap;
   height: 100%;
   position: relative;
-  width: 100%;
+  width: calc(100% / 7);
 
   &:last-child {
     border-right: none;
@@ -57,6 +71,16 @@ export const Day = styled.div.attrs(props => ({
       width: 100%;
     }
   }
+
+  @media (max-width: 767px) {
+    flex-direction: row-reverse;
+    height: 75px;
+    width: 100%;
+
+    &.disabled {
+      display: none;
+    }
+  }
 `;
 
 export const Number = styled.div.attrs(props => ({
@@ -76,7 +100,7 @@ export const Number = styled.div.attrs(props => ({
   &.active {
     > p {
       border-radius: 15px;
-      background: red;
+      background: #FF3030;
       text-align: center;
       width: 30px;
     }
@@ -85,9 +109,15 @@ export const Number = styled.div.attrs(props => ({
   > p {
     margin: 0;
   }
+
+  @media (max-width: 767px) {
+    padding-right: 5px;
+    width: 40px;
+  }
 `;
 
 export const EventList = styled.div`
+  align-content: flex-start;
   align-items: center;
   box-sizing: border-box;
   color: black;
@@ -96,5 +126,13 @@ export const EventList = styled.div`
   height: calc(100% - 45px);
   justify-content: center;
   overflow: auto;
+  padding: 0 5px;
   width: 100%;
+
+  @media (max-width: 767px) {
+    height: calc(100% - 20px);
+    margin-top: 10px;
+    overflow: auto;
+    width: calc(100% - 40px);
+  }
 `;

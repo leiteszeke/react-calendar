@@ -9,9 +9,9 @@ export const Element = styled.input.attrs(props => ({
 }))`
     background: none;
     border: none;
-    border-bottom: 1px solid #6dafd9;
+    border-bottom: 1px solid #333333;
     box-sizing: border-box;
-    color: #646464;
+    color: #333333;
     font-size: 14px;
     height: 28px;
     outline: none;

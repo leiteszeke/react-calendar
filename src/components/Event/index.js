@@ -1,16 +1,43 @@
 // Dependencies
 import React from 'react';
+import moment from 'moment';
 // Styled
 import { Container, Title, Time } from './style';
 
 const Event = (props) => {
+    const {
+        color,
+        date,
+        id,
+        onClick,
+        time,
+        title,
+    } = props;
+
+    const handleClick = (e) => {
+        e.stopPropagation();
+
+        if (typeof onClick === 'function') {
+            onClick({
+                color,
+                date: moment(date),
+                id,
+                time: moment(time),
+                title,
+            });
+        }
+    }
+
     return (
-        <Container>
+        <Container
+            color={ color }
+            onClick={ handleClick }
+        >
             <Title>
-                Mi evento otra vez
+                { title || 'Sin Título' }
             </Title>
             <Time>
-                12:00
+                { moment(time).format('HH:mm') }
             </Time>
         </Container>
     )

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Container = styled.div.attrs(props => ({
     onClick: props.onClick,
 }))`
-    background: #2c91d1;
+    background: ${ props => props.color };
     border-radius: 4px;
     color: #FFFFFF;
     cursor: pointer;
@@ -18,6 +18,6 @@ export const Container = styled.div.attrs(props => ({
     text-transform: uppercase;
 
     &:hover {
-        background: #2284c4;
+        background: ${ props => props.hoverColor };
     }
 `;
